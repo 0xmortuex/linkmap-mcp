@@ -1,0 +1,74 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 _stack_size = 0x400
+ 8000000  8000000       40     4 .isr_vector
+ 8000000  8000000        0     1         . = ALIGN(4)
+ 8000000  8000000       40     4         startup.o:(.isr_vector)
+ 8000000  8000000       40     1                 vector_table
+ 8000040  8000040        0     1         . = ALIGN(4)
+ 8000040  8000040     3824     4 .text
+ 8000040  8000040        0     1         . = ALIGN(4)
+ 8000040  8000040        0     4         startup.o:(.text)
+ 8000040  8000040       86     4         startup.o:(.text.reset_handler)
+ 8000040  8000040        0     1                 $t
+ 8000041  8000041       86     1                 reset_handler
+ 80000c8  80000c8        6     4         startup.o:(.text.default_handler)
+ 80000c8  80000c8        0     1                 $t
+ 80000c9  80000c9        6     1                 default_handler
+ 80000d0  80000d0        0     4         main.o:(.text)
+ 80000d0  80000d0       e4     4         main.o:(.text.main)
+ 80000d0  80000d0        0     1                 $t
+ 80000d1  80000d1       e4     1                 main
+ 80001b4  80001b4     36b0     1         main.o:(.rodata.font_bitmap)
+ 80001b4  80001b4     36b0     1                 font_bitmap
+ 8003864  8003864        0     1         . = ALIGN(4)
+ 8003864  8003864        0     1         _etext = .
+ 8003864  8003864        0     1 _sidata = LOADADDR(.data)
+ 8003864  8003864        c     4 .ARM.extab.text.main
+ 8003864  8003864        c     4         main.o:(.ARM.extab.text.main)
+20000000  8003870       24     4 .data
+20000000  8003870        0     1         . = ALIGN(4)
+20000000  8003870        0     1         _sdata = .
+20000000  8003870        4     4         main.o:(.data.boot_count)
+20000000  8003870        4     1                 boot_count
+20000004  8003874       20     1         main.o:(.data.device_name)
+20000004  8003874       20     1                 device_name
+20000024  8003894        0     1         . = ALIGN(4)
+20000024  8003894        0     1         _edata = .
+20000024 20000024      400     4 .bss
+20000024 20000024        0     1         . = ALIGN(4)
+20000024 20000024        0     1         _sbss = .
+20000024 20000024      400     4         main.o:(.bss.rx_buffer)
+20000024 20000024      400     1                 rx_buffer
+20000424 20000424        0     1         . = ALIGN(4)
+20000424 20000424        0     1         _ebss = .
+20000424 20000424      404     1 .stack
+20000424 20000424        4     1         . = ALIGN(8)
+20000428 20000428      400     1         . = . + _stack_size
+20000828 20000828        0     1         PROVIDE(_estack = .)
+       0        0      2f2     1 .debug_loc
+       0        0       f1     1         startup.o:(.debug_loc)
+      f1       f1      201     1         main.o:(.debug_loc)
+       0        0      1a5     1 .debug_abbrev
+       0        0       b1     1         startup.o:(.debug_abbrev)
+      b1       b1       f4     1         main.o:(.debug_abbrev)
+       0        0      22b     1 .debug_info
+       0        0       cd     1         startup.o:(.debug_info)
+      cd       cd      15e     1         main.o:(.debug_info)
+       0        0       18     1 .debug_ranges
+       0        0       18     1         startup.o:(.debug_ranges)
+       0        0      110     1 .debug_str
+       0        0      110     1         <internal>:(.debug_str)
+       0        0       41     1 .ARM.attributes
+       0        0       41     1         startup.o:(.ARM.attributes)
+       0        0       84     4 .debug_frame
+       0        0       4c     4         startup.o:(.debug_frame)
+      4c       4c       38     4         main.o:(.debug_frame)
+       0        0      2a1     1 .debug_line
+       0        0      11a     1         startup.o:(.debug_line)
+     11a      11a      187     1         main.o:(.debug_line)
+       0        0      180     4 .symtab
+       0        0      180     4         <internal>:(.symtab)
+       0        0       bb     1 .shstrtab
+       0        0       bb     1         <internal>:(.shstrtab)
+       0        0       e3     1 .strtab
+       0        0       e3     1         <internal>:(.strtab)

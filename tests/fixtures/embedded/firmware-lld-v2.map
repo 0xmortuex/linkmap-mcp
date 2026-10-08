@@ -1,0 +1,78 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 _stack_size = 0x400
+ 8000000  8000000       40     4 .isr_vector
+ 8000000  8000000        0     1         . = ALIGN(4)
+ 8000000  8000000       40     4         startup.o:(.isr_vector)
+ 8000000  8000000       40     1                 vector_table
+ 8000040  8000040        0     1         . = ALIGN(4)
+ 8000040  8000040     3ae4     4 .text
+ 8000040  8000040        0     1         . = ALIGN(4)
+ 8000040  8000040        0     4         startup.o:(.text)
+ 8000040  8000040       86     4         startup.o:(.text.reset_handler)
+ 8000040  8000040        0     1                 $t
+ 8000041  8000041       86     1                 reset_handler
+ 80000c8  80000c8        6     4         startup.o:(.text.default_handler)
+ 80000c8  80000c8        0     1                 $t
+ 80000c9  80000c9        6     1                 default_handler
+ 80000d0  80000d0        0     4         main.o:(.text)
+ 80000d0  80000d0      14a     4         main.o:(.text.main)
+ 80000d0  80000d0        0     1                 $t
+ 80000d1  80000d1      14a     1                 main
+ 800021a  800021a     36b0     1         main.o:(.rodata.font_bitmap)
+ 800021a  800021a     36b0     1                 font_bitmap
+ 80038ca  80038ca      258     1         main.o:(.rodata.log_banner)
+ 80038ca  80038ca      258     1                 log_banner
+ 8003b22  8003b22        2     1         . = ALIGN(4)
+ 8003b24  8003b24        0     1         _etext = .
+ 8003b24  8003b24        0     1 _sidata = LOADADDR(.data)
+ 8003b24  8003b24        c     4 .ARM.extab.text.main
+ 8003b24  8003b24        c     4         main.o:(.ARM.extab.text.main)
+20000000  8003b30       24     4 .data
+20000000  8003b30        0     1         . = ALIGN(4)
+20000000  8003b30        0     1         _sdata = .
+20000000  8003b30        4     4         main.o:(.data.boot_count)
+20000000  8003b30        4     1                 boot_count
+20000004  8003b34       20     1         main.o:(.data.device_name)
+20000004  8003b34       20     1                 device_name
+20000024  8003b54        0     1         . = ALIGN(4)
+20000024  8003b54        0     1         _edata = .
+20000024 20000024      500     4 .bss
+20000024 20000024        0     1         . = ALIGN(4)
+20000024 20000024        0     1         _sbss = .
+20000024 20000024      400     4         main.o:(.bss.rx_buffer)
+20000024 20000024      400     1                 rx_buffer
+20000424 20000424      100     4         main.o:(.bss.log_ring)
+20000424 20000424      100     1                 log_ring
+20000524 20000524        0     1         . = ALIGN(4)
+20000524 20000524        0     1         _ebss = .
+20000524 20000524      404     1 .stack
+20000524 20000524        4     1         . = ALIGN(8)
+20000528 20000528      400     1         . = . + _stack_size
+20000928 20000928        0     1         PROVIDE(_estack = .)
+       0        0      369     1 .debug_loc
+       0        0       f1     1         startup.o:(.debug_loc)
+      f1       f1      278     1         main.o:(.debug_loc)
+       0        0      1ab     1 .debug_abbrev
+       0        0       b1     1         startup.o:(.debug_abbrev)
+      b1       b1       fa     1         main.o:(.debug_abbrev)
+       0        0      2a2     1 .debug_info
+       0        0       cd     1         startup.o:(.debug_info)
+      cd       cd      1d5     1         main.o:(.debug_info)
+       0        0       18     1 .debug_ranges
+       0        0       18     1         startup.o:(.debug_ranges)
+       0        0      12d     1 .debug_str
+       0        0      12d     1         <internal>:(.debug_str)
+       0        0       41     1 .ARM.attributes
+       0        0       41     1         startup.o:(.ARM.attributes)
+       0        0       8c     4 .debug_frame
+       0        0       4c     4         startup.o:(.debug_frame)
+      4c       4c       40     4         main.o:(.debug_frame)
+       0        0      2c1     1 .debug_line
+       0        0      11a     1         startup.o:(.debug_line)
+     11a      11a      1a7     1         main.o:(.debug_line)
+       0        0      1a0     4 .symtab
+       0        0      1a0     4         <internal>:(.symtab)
+       0        0       bb     1 .shstrtab
+       0        0       bb     1         <internal>:(.shstrtab)
+       0        0       f7     1 .strtab
+       0        0       f7     1         <internal>:(.strtab)

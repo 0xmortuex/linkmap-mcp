@@ -1,0 +1,26 @@
+     VMA      LMA     Size Align Out     In      Symbol
+    1000     1000       5d    16 .text
+    1000     1000        0     4         prog.o:(.text)
+    1000     1000       5d    16         prog.o:(.text._start)
+    1000     1000       5d     1                 _start
+    1010     1010        c     1 .rodata
+    1010     1010        c     1         prog.o:(.rodata.message)
+    1010     1010        c     1                 message
+    106c     106c       3c     4 .eh_frame
+    106c     106c       38     1         prog.o:(.eh_frame+0x0)
+       0        0       90     1 .debug_abbrev
+       0        0       90     1         prog.o:(.debug_abbrev)
+       0        0       b6     1 .debug_info
+       0        0       b6     1         prog.o:(.debug_info)
+       0        0       87     1 .debug_str
+       0        0       87     1         <internal>:(.debug_str)
+       0        0       29     1 .comment
+       0        0       29     1         <internal>:(.comment)
+       0        0       6a     1 .debug_line
+       0        0       6a     1         prog.o:(.debug_line)
+       0        0       40     4 .symtab
+       0        0       40     4         <internal>:(.symtab)
+       0        0       6d     1 .shstrtab
+       0        0       6d     1         <internal>:(.shstrtab)
+       0        0       17     1 .strtab
+       0        0       17     1         <internal>:(.strtab)
